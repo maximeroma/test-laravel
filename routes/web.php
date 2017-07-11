@@ -12,5 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+  return view('welcome');
 });
+
+Route::get('/customers', 'CustomerController@getAllCustomers');
+
+Route::get('/customer/{id}', 'CustomerController@getCustomer');
+
+Route::post('/customer', 'CustomerController@addCustomer');
+
+Route::delete('/customer/{id}', 'CustomerController@deleteCustomer');
+
+Route::put('/customer/{id}', 'CustomerController@updateCustomer');
