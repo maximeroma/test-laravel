@@ -15,7 +15,7 @@
       </div>
       <div class="field">
         <label>Email</label>
-        <input type="text" name="email" placeholder="email">
+        <input type="text" name="email" placeholder="Email">
       </div>
       <button class="ui button green" type="submit">Submit</button>
     </form>

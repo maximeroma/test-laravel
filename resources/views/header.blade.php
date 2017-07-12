@@ -10,3 +10,14 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     </head>
+
+      <div class="ui stackable menu">
+        <div class="item">
+          <img src="http://www.freeiconspng.com/uploads/customers-icon-29.png">
+      </div>
+      <a href="/" class="item">Add Customer</a>
+      <a href="/customers" class="item">Customers</a>
+      <a href="#" class="item">Products</a>
+      <a href="#" class="item">Groups</a>
+    </div>
+    </header>

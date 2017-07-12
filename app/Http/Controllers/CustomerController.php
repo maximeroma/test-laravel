@@ -20,10 +20,6 @@ class CustomerController extends Controller
     }
 
     public function addCustomer(Request $request){
-
-      $customer = new Customer();
-
-
       $first_name = $request->input('first_name');
       $last_name = $request->input('last_name');
       $email = $request->input('email');
@@ -41,7 +37,14 @@ class CustomerController extends Controller
       return redirect('/customers');
     }
 
-    public function updateCustomer(){}
+    public function updateCustomer(Request $request, $id){
+      $first_name = $request->input('first_name');
+      $last_name = $request->input('last_name');
+      $email = $request->input('email');
+      $updatedAt = new DateTime();
+      DB::table('customers')->where('id', $id)->update(['first_name' => $first_name, 'last_name' => $last_name, 'email' => $email, 'updated_at' => $updatedAt]);
+      return redirect('/customers');
+    }
 
 
 }
