@@ -1,16 +1,43 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Customers</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-    </head>
+@include('header')
     <body>
-      @foreach ($customers as $customer)
-        <p>This is customer {{ $customer->first_name }}</p>
-      @endforeach
+      <h1 class="center aligned">Customers' Table</h1>
+      <table class="ui selectable inverted table">
+        <thead>
+          <th>Id</th>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>More details</th>
+          <th>Delete</th>
+        </thead>
+        <tbody>
+          @foreach ($customers as $customer)
+          <tr>
+            <td>{{ $customer->id }}</td>
+            <td>{{ $customer->first_name }}</td>
+            <td>{{ $customer->last_name }}</td>
+            <td>
+              <a href="customer/{{ $customer->id }}">
+                <div class="ui animated button" tabindex="0">
+                  <div class="visible content">Details</div>
+                  <div class="hidden content">
+                    <i class="right arrow icon"></i>
+                  </div>
+                </div>
+              </a>
+            </td>
+            <td>
+              <a href="customer/delete/{{ $customer->id }}">
+                <div class="ui animated red button" tabindex="0">
+                  <div class="visible content">Delete</div>
+                    <div class="hidden content">
+                      <i class="trash icon"></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </td>
+          </tr>
+          @endforeach
+        </tbody>
+      </table>
     </body>
